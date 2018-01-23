@@ -226,7 +226,7 @@ const decorateResponse = function(response) {
   });
 };
 
-const decoratedObj = decorateResponse(sampleResponse);
+// const decoratedObj = decorateResponse(response);
 
 // TASK:
 // 1. Create a `generateVideoItemHtml` function that receives the decorated object
@@ -242,18 +242,18 @@ const generateVideoItemHtml = function(video) {
   `;
 };
 
-const firstVideo = generateVideoItemHtml(decoratedObj[0]);
+// const firstVideo = generateVideoItemHtml(decoratedObj[0]);
 
 // TASK:
 // 1. Create a `addVideosToStore` function that receives an array of decorated video 
 // objects and sets the array as the value held in store.videos
 // TEST IT!
-const addVideosToStore = function() {
-  store.videos = decoratedObj;
+const addVideosToStore = function(response) {
+  store.videos = decorateResponse(response);
 };
 
-addVideosToStore(decoratedObj);
-console.log(store);
+// addVideosToStore(decoratedObj);
+// console.log(store);
 
 // TASK:
 // 1. Create a `render` function
@@ -261,8 +261,12 @@ console.log(store);
 // 3. Add your array of DOM elements to the appropriate DOM element
 // TEST IT!
 const render = function() {
-
+  const videos = store.videos;
+  const videosMap = videos.map(video => generateVideoItemHtml(video));
+  $('.results').html(videosMap);
 };
+
+// render();
 
 // TASK:
 // 1. Create a `handleFormSubmit` function that adds an event listener to the form
@@ -273,15 +277,23 @@ const render = function() {
 //   d) Invoke the `fetchVideos` function, sending in the search value
 //   e) Inside the callback, send the API response through the `decorateResponse` function
 //   f) Inside the callback, add the decorated response into your store using the `addVideosToStore` function
-//   g) Inside the callback, run the `render` function 
+//   g) Inside the callback, run the `render` function
 // TEST IT!
 const handleFormSubmit = function() {
-  event.preventDefault();
-  $;
+  $('.search-form').submit(event => {
+    event.preventDefault();
+    const searchTarget = $(event.currentTarget).find('#search-term');
+    const searchTerm = searchTarget.val();
+    searchTarget.val('');
+    fetchVideos(searchTerm, decorateResponse(addVideosToStore(render())));
+  });
+
+  
 };
 
 // When DOM is ready:
 $(function () {
+  handleFormSubmit();
   // TASK:
   // 1. Run `handleFormSubmit` to bind the event listener to the DOM
 });
