@@ -8,7 +8,7 @@ const getVideos = (function() {
     fetchVideos: function(searchTerm, callback) {
       const query = {
         key: getVideos.API_KEY,
-        'maxResults': '5',
+        'maxResults': '6',
         'part': 'snippet',
         'q': `${searchTerm} in:name`
       };

@@ -1,176 +1,183 @@
 'use strict';
 
-const sampleResponse = {
-  'kind': 'youtube#searchListResponse',
-  'etag': '"g7k5f8kvn67Bsl8L-Bum53neIr4/S3dR1rDQzjWVxuVCgr5htE51yuc"',
-  'nextPageToken': 'CAUQAA',
-  'regionCode': 'US',
-  'pageInfo': {
-    'totalResults': 1000000,
-    'resultsPerPage': 5
-  },
-  'items': [
-    {
-      'kind': 'youtube#searchResult',
-      'etag': '"g7k5f8kvn67Bsl8L-Bum53neIr4/MEvhVel-WA-P3pSa8q10GUZQkgs"',
-      'id': {
-        'kind': 'youtube#video',
-        'videoId': 'QJH2O4AoWHM'
-      },
-      'snippet': {
-        'publishedAt': '2017-03-01T02:59:58.000Z',
-        'channelId': 'UCoOYmfwfkfDRyRviumtVglA',
-        'title': 'DJ YASMIN IN THE NAME OF LOVE BREAKBEAT STYLE 2017',
-        'description': '',
-        'thumbnails': {
-          'default': {
-            'url': 'https://i.ytimg.com/vi/QJH2O4AoWHM/default.jpg',
-            'width': 120,
-            'height': 90
-          },
-          'medium': {
-            'url': 'https://i.ytimg.com/vi/QJH2O4AoWHM/mqdefault.jpg',
-            'width': 320,
-            'height': 180
-          },
-          'high': {
-            'url': 'https://i.ytimg.com/vi/QJH2O4AoWHM/hqdefault.jpg',
-            'width': 480,
-            'height': 360
-          }
-        },
-        'channelTitle': 'DJCantik',
-        'liveBroadcastContent': 'none'
-      }
-    },
-    {
-      'kind': 'youtube#searchResult',
-      'etag': '"g7k5f8kvn67Bsl8L-Bum53neIr4/2Jhi85BB_eyxO8jR2vKiORLWSH4"',
-      'id': {
-        'kind': 'youtube#video',
-        'videoId': 'TCqcYSX20Tg'
-      },
-      'snippet': {
-        'publishedAt': '2016-11-13T00:30:00.000Z',
-        'channelId': 'UCSus1TrXtjqwmCidwqHc8OQ',
-        'title': 'BRAND NAME VS NO NAME SODA TASTE TEST EXPERIMENT: COULD YOU TELL THE DIFFERENCE!? (BUZZFEEED PARODY)',
-        'description': 'SWAZENATION instagram : https://www.instagram.com/ryanswaze twitter: https://twitter.com/ryanswaze snapchat: ryanswaze FOLLOW THE TEAM! Bongo : https://www.youtube.com/user/BongoBicher...',
-        'thumbnails': {
-          'default': {
-            'url': 'https://i.ytimg.com/vi/TCqcYSX20Tg/default.jpg',
-            'width': 120,
-            'height': 90
-          },
-          'medium': {
-            'url': 'https://i.ytimg.com/vi/TCqcYSX20Tg/mqdefault.jpg',
-            'width': 320,
-            'height': 180
-          },
-          'high': {
-            'url': 'https://i.ytimg.com/vi/TCqcYSX20Tg/hqdefault.jpg',
-            'width': 480,
-            'height': 360
-          }
-        },
-        'channelTitle': 'Ryan Swaze',
-        'liveBroadcastContent': 'none'
-      }
-    },
-    {
-      'kind': 'youtube#searchResult',
-      'etag': '"g7k5f8kvn67Bsl8L-Bum53neIr4/TXV4LdiXnlrIRefaHiJWHqN98sE"',
-      'id': {
-        'kind': 'youtube#video',
-        'videoId': 'SMZ9Cef_9ps'
-      },
-      'snippet': {
-        'publishedAt': '2017-12-15T22:20:04.000Z',
-        'channelId': 'UCrl_sx4ac0KjKpLbcXlOOuw',
-        'title': 'BRAND NAME VS. GENERIC SODA TASTE TEST!!',
-        'description': 'BRAND NAME VS. GENERIC SODA TASTE TEST!! Some people may think that there is a huge difference between brand name and generic soda, so we decided to see if we could tell the difference. Rules:...',
-        'thumbnails': {
-          'default': {
-            'url': 'https://i.ytimg.com/vi/SMZ9Cef_9ps/default.jpg',
-            'width': 120,
-            'height': 90
-          },
-          'medium': {
-            'url': 'https://i.ytimg.com/vi/SMZ9Cef_9ps/mqdefault.jpg',
-            'width': 320,
-            'height': 180
-          },
-          'high': {
-            'url': 'https://i.ytimg.com/vi/SMZ9Cef_9ps/hqdefault.jpg',
-            'width': 480,
-            'height': 360
-          }
-        },
-        'channelTitle': 'Double Ay',
-        'liveBroadcastContent': 'none'
-      }
-    },
-    {
-      'kind': 'youtube#searchResult',
-      'etag': '"g7k5f8kvn67Bsl8L-Bum53neIr4/etC951VvxksKG6hSfQgJVaUPK1o"',
-      'id': {
-        'kind': 'youtube#video',
-        'videoId': 'PymTqoKeT8I'
-      },
-      'snippet': {
-        'publishedAt': '2017-05-27T20:01:42.000Z',
-        'channelId': 'UCGCPAOQDZa_TTTXDr5byjww',
-        'title': 'MIXING EVERY SODA FLAVOR TOGETHER - TASTE EXPERIMENT!',
-        'description': 'TODAY I MIX TOGETHER EVERY SODA FLAVOR AND TRINK IT! Download Best Fiends for FREE http://download.BestFiends.com/BootCamp PURCHASE MY NOVEL: http://joeygraceffa.com/children-of-eden-book...',
-        'thumbnails': {
-          'default': {
-            'url': 'https://i.ytimg.com/vi/PymTqoKeT8I/default.jpg',
-            'width': 120,
-            'height': 90
-          },
-          'medium': {
-            'url': 'https://i.ytimg.com/vi/PymTqoKeT8I/mqdefault.jpg',
-            'width': 320,
-            'height': 180
-          },
-          'high': {
-            'url': 'https://i.ytimg.com/vi/PymTqoKeT8I/hqdefault.jpg',
-            'width': 480,
-            'height': 360
-          }
-        },
-        'channelTitle': 'Joey Graceffa',
-        'liveBroadcastContent': 'none'
-      }
-    },
-    {
-      'kind': 'youtube#searchResult',
-      'etag': '"g7k5f8kvn67Bsl8L-Bum53neIr4/TKSwRaYyyS4C3M9fkfmEC9EAbKk"',
-      'id': {
-        'kind': 'youtube#channel',
-        'channelId': 'UCtu2BCnJoFGRBOuIh570QWw'
-      },
-      'snippet': {
-        'publishedAt': '2012-04-11T03:11:17.000Z',
-        'channelId': 'UCtu2BCnJoFGRBOuIh570QWw',
-        'title': 'Sodapoppin',
-        'description': '',
-        'thumbnails': {
-          'default': {
-            'url': 'https://yt3.ggpht.com/-uNBMVkuSew0/AAAAAAAAAAI/AAAAAAAAAAA/06Lj2CiAGMs/s88-c-k-no-mo-rj-c0xffffff/photo.jpg'
-          },
-          'medium': {
-            'url': 'https://yt3.ggpht.com/-uNBMVkuSew0/AAAAAAAAAAI/AAAAAAAAAAA/06Lj2CiAGMs/s240-c-k-no-mo-rj-c0xffffff/photo.jpg'
-          },
-          'high': {
-            'url': 'https://yt3.ggpht.com/-uNBMVkuSew0/AAAAAAAAAAI/AAAAAAAAAAA/06Lj2CiAGMs/s240-c-k-no-mo-rj-c0xffffff/photo.jpg'
-          }
-        },
-        'channelTitle': 'Sodapoppin',
-        'liveBroadcastContent': 'none'
-      }
-    }
-  ]
-};
+// When DOM is ready:
+$(function () {
+  // TASK:
+  // 1. Run `handleFormSubmit` to bind the event listener to the DOM
+  videoList.handleFormSubmit();
+});
+
+// const sampleResponse = {
+//   'kind': 'youtube#searchListResponse',
+//   'etag': '"g7k5f8kvn67Bsl8L-Bum53neIr4/S3dR1rDQzjWVxuVCgr5htE51yuc"',
+//   'nextPageToken': 'CAUQAA',
+//   'regionCode': 'US',
+//   'pageInfo': {
+//     'totalResults': 1000000,
+//     'resultsPerPage': 5
+//   },
+//   'items': [
+//     {
+//       'kind': 'youtube#searchResult',
+//       'etag': '"g7k5f8kvn67Bsl8L-Bum53neIr4/MEvhVel-WA-P3pSa8q10GUZQkgs"',
+//       'id': {
+//         'kind': 'youtube#video',
+//         'videoId': 'QJH2O4AoWHM'
+//       },
+//       'snippet': {
+//         'publishedAt': '2017-03-01T02:59:58.000Z',
+//         'channelId': 'UCoOYmfwfkfDRyRviumtVglA',
+//         'title': 'DJ YASMIN IN THE NAME OF LOVE BREAKBEAT STYLE 2017',
+//         'description': '',
+//         'thumbnails': {
+//           'default': {
+//             'url': 'https://i.ytimg.com/vi/QJH2O4AoWHM/default.jpg',
+//             'width': 120,
+//             'height': 90
+//           },
+//           'medium': {
+//             'url': 'https://i.ytimg.com/vi/QJH2O4AoWHM/mqdefault.jpg',
+//             'width': 320,
+//             'height': 180
+//           },
+//           'high': {
+//             'url': 'https://i.ytimg.com/vi/QJH2O4AoWHM/hqdefault.jpg',
+//             'width': 480,
+//             'height': 360
+//           }
+//         },
+//         'channelTitle': 'DJCantik',
+//         'liveBroadcastContent': 'none'
+//       }
+//     },
+//     {
+//       'kind': 'youtube#searchResult',
+//       'etag': '"g7k5f8kvn67Bsl8L-Bum53neIr4/2Jhi85BB_eyxO8jR2vKiORLWSH4"',
+//       'id': {
+//         'kind': 'youtube#video',
+//         'videoId': 'TCqcYSX20Tg'
+//       },
+//       'snippet': {
+//         'publishedAt': '2016-11-13T00:30:00.000Z',
+//         'channelId': 'UCSus1TrXtjqwmCidwqHc8OQ',
+//         'title': 'BRAND NAME VS NO NAME SODA TASTE TEST EXPERIMENT: COULD YOU TELL THE DIFFERENCE!? (BUZZFEEED PARODY)',
+//         'description': 'SWAZENATION instagram : https://www.instagram.com/ryanswaze twitter: https://twitter.com/ryanswaze snapchat: ryanswaze FOLLOW THE TEAM! Bongo : https://www.youtube.com/user/BongoBicher...',
+//         'thumbnails': {
+//           'default': {
+//             'url': 'https://i.ytimg.com/vi/TCqcYSX20Tg/default.jpg',
+//             'width': 120,
+//             'height': 90
+//           },
+//           'medium': {
+//             'url': 'https://i.ytimg.com/vi/TCqcYSX20Tg/mqdefault.jpg',
+//             'width': 320,
+//             'height': 180
+//           },
+//           'high': {
+//             'url': 'https://i.ytimg.com/vi/TCqcYSX20Tg/hqdefault.jpg',
+//             'width': 480,
+//             'height': 360
+//           }
+//         },
+//         'channelTitle': 'Ryan Swaze',
+//         'liveBroadcastContent': 'none'
+//       }
+//     },
+//     {
+//       'kind': 'youtube#searchResult',
+//       'etag': '"g7k5f8kvn67Bsl8L-Bum53neIr4/TXV4LdiXnlrIRefaHiJWHqN98sE"',
+//       'id': {
+//         'kind': 'youtube#video',
+//         'videoId': 'SMZ9Cef_9ps'
+//       },
+//       'snippet': {
+//         'publishedAt': '2017-12-15T22:20:04.000Z',
+//         'channelId': 'UCrl_sx4ac0KjKpLbcXlOOuw',
+//         'title': 'BRAND NAME VS. GENERIC SODA TASTE TEST!!',
+//         'description': 'BRAND NAME VS. GENERIC SODA TASTE TEST!! Some people may think that there is a huge difference between brand name and generic soda, so we decided to see if we could tell the difference. Rules:...',
+//         'thumbnails': {
+//           'default': {
+//             'url': 'https://i.ytimg.com/vi/SMZ9Cef_9ps/default.jpg',
+//             'width': 120,
+//             'height': 90
+//           },
+//           'medium': {
+//             'url': 'https://i.ytimg.com/vi/SMZ9Cef_9ps/mqdefault.jpg',
+//             'width': 320,
+//             'height': 180
+//           },
+//           'high': {
+//             'url': 'https://i.ytimg.com/vi/SMZ9Cef_9ps/hqdefault.jpg',
+//             'width': 480,
+//             'height': 360
+//           }
+//         },
+//         'channelTitle': 'Double Ay',
+//         'liveBroadcastContent': 'none'
+//       }
+//     },
+//     {
+//       'kind': 'youtube#searchResult',
+//       'etag': '"g7k5f8kvn67Bsl8L-Bum53neIr4/etC951VvxksKG6hSfQgJVaUPK1o"',
+//       'id': {
+//         'kind': 'youtube#video',
+//         'videoId': 'PymTqoKeT8I'
+//       },
+//       'snippet': {
+//         'publishedAt': '2017-05-27T20:01:42.000Z',
+//         'channelId': 'UCGCPAOQDZa_TTTXDr5byjww',
+//         'title': 'MIXING EVERY SODA FLAVOR TOGETHER - TASTE EXPERIMENT!',
+//         'description': 'TODAY I MIX TOGETHER EVERY SODA FLAVOR AND TRINK IT! Download Best Fiends for FREE http://download.BestFiends.com/BootCamp PURCHASE MY NOVEL: http://joeygraceffa.com/children-of-eden-book...',
+//         'thumbnails': {
+//           'default': {
+//             'url': 'https://i.ytimg.com/vi/PymTqoKeT8I/default.jpg',
+//             'width': 120,
+//             'height': 90
+//           },
+//           'medium': {
+//             'url': 'https://i.ytimg.com/vi/PymTqoKeT8I/mqdefault.jpg',
+//             'width': 320,
+//             'height': 180
+//           },
+//           'high': {
+//             'url': 'https://i.ytimg.com/vi/PymTqoKeT8I/hqdefault.jpg',
+//             'width': 480,
+//             'height': 360
+//           }
+//         },
+//         'channelTitle': 'Joey Graceffa',
+//         'liveBroadcastContent': 'none'
+//       }
+//     },
+//     {
+//       'kind': 'youtube#searchResult',
+//       'etag': '"g7k5f8kvn67Bsl8L-Bum53neIr4/TKSwRaYyyS4C3M9fkfmEC9EAbKk"',
+//       'id': {
+//         'kind': 'youtube#channel',
+//         'channelId': 'UCtu2BCnJoFGRBOuIh570QWw'
+//       },
+//       'snippet': {
+//         'publishedAt': '2012-04-11T03:11:17.000Z',
+//         'channelId': 'UCtu2BCnJoFGRBOuIh570QWw',
+//         'title': 'Sodapoppin',
+//         'description': '',
+//         'thumbnails': {
+//           'default': {
+//             'url': 'https://yt3.ggpht.com/-uNBMVkuSew0/AAAAAAAAAAI/AAAAAAAAAAA/06Lj2CiAGMs/s88-c-k-no-mo-rj-c0xffffff/photo.jpg'
+//           },
+//           'medium': {
+//             'url': 'https://yt3.ggpht.com/-uNBMVkuSew0/AAAAAAAAAAI/AAAAAAAAAAA/06Lj2CiAGMs/s240-c-k-no-mo-rj-c0xffffff/photo.jpg'
+//           },
+//           'high': {
+//             'url': 'https://yt3.ggpht.com/-uNBMVkuSew0/AAAAAAAAAAI/AAAAAAAAAAA/06Lj2CiAGMs/s240-c-k-no-mo-rj-c0xffffff/photo.jpg'
+//           }
+//         },
+//         'channelTitle': 'Sodapoppin',
+//         'liveBroadcastContent': 'none'
+//       }
+//     }
+//   ]
+// };
 
 // const API_KEY = 'AIzaSyDyGzb5XI8n8MSWyRZCesg6rIm9XJcNWMM'; // Adrian's api key
 
@@ -281,10 +288,3 @@ const sampleResponse = {
 //     getVideos.fetchVideos(searchTerm, decorateResponse);
 //   });
 // };
-
-// When DOM is ready:
-$(function () {
-  // TASK:
-  // 1. Run `handleFormSubmit` to bind the event listener to the DOM
-  videoList.handleFormSubmit();
-});
