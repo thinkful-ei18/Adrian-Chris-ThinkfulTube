@@ -1,6 +1,6 @@
 'use strict';
 
-const samepleResponse = {
+const sampleResponse = {
   'kind': 'youtube#searchListResponse',
   'etag': '"g7k5f8kvn67Bsl8L-Bum53neIr4/S3dR1rDQzjWVxuVCgr5htE51yuc"',
   'nextPageToken': 'CAUQAA',
@@ -197,7 +197,6 @@ const fetchVideos = function(searchTerm, callback) {
   };
 
   $.getJSON(BASE_URL, query, callback);
-
 };
 
 // Testing out fetchVideos below:
@@ -215,32 +214,46 @@ const fetchVideos = function(searchTerm, callback) {
 // TEST IT! Grab an example API response and send it into the function - make sure
 // you get back the object you want.
 const decorateResponse = function(response) {
-  response.items.map(function (item) {
-    const id = item.id;
-    const snippet = item.snippet.title;
-    const thumbnail = item.snippet.thumbnails;
-    const 
-    console.log(thumbnail);
-  } );
+  return response.items.map(function (item) {
+    const id = item.id.videoId;
+    const title = item.snippet.title;
+    const thumbnail = item.snippet.thumbnails.high.url;
+    return {
+      id,
+      title,
+      thumbnail
+    };
+  });
 };
 
-decorateResponse(samepleResponse);
+const decoratedObj = decorateResponse(sampleResponse);
 
 // TASK:
 // 1. Create a `generateVideoItemHtml` function that receives the decorated object
 // 2. Using the object, return an HTML string containing all the expected data
 // TEST IT!
 const generateVideoItemHtml = function(video) {
-
+  return `
+    <li>
+      <span>id: ${video.id}</span>
+      <span>title: ${video.title}</span>
+      <img src="${video.thumbnail}" alt="Thumbnail for ${video.title}"/>
+    </li>
+  `;
 };
+
+const firstVideo = generateVideoItemHtml(decoratedObj[0]);
 
 // TASK:
 // 1. Create a `addVideosToStore` function that receives an array of decorated video 
-// objects and sets the array as the value held in store.items
+// objects and sets the array as the value held in store.videos
 // TEST IT!
-const addVideosToStore = function(videos) {
-
+const addVideosToStore = function() {
+  store.videos = decoratedObj;
 };
+
+addVideosToStore(decoratedObj);
+console.log(store);
 
 // TASK:
 // 1. Create a `render` function
